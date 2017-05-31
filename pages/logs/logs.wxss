@@ -2,7 +2,22 @@
   display: flex;
   flex-direction: column;
   padding: 40rpx;
+  background: #fff;
 }
 .log-item {
   margin: 10rpx;
+  display: block;
+}
+.top{
+  width: 100%;
+  height: 200rpx;
+  position: fixed;
+  top: 0;
+  z-index: -1000;
+  background: #ddd;
+}
+.content{
+  width: 100%;
+  z-index: 1000;
+  min-height: 200rpx;
 }

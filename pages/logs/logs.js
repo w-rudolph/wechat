@@ -10,5 +10,18 @@ Page({
         return util.formatTime(new Date(log))
       })
     })
-  }
+  },
+  onPullDownRefresh() {
+    wx.showToast({
+      title: '下拉刷新开始',
+    });
+    setTimeout(()=>{
+      wx.stopPullDownRefresh()
+    },1500);
+  },
+  onReachBottom: function () {
+    wx.showToast({
+      title: '上拉事件',
+    })
+  },
 })

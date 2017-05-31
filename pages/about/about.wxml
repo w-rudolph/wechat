@@ -1,6 +1,16 @@
-<view>
-   <text>about page</text>
+<view class="userinfo">
    <view>
-     <button type="primary" size="mini" bindtap="showTabbar">back to home</button>
+     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+   </view>
+   <view>
+     <view class="userinfo-address">
+        <view>
+           <label>省份:</label><text>{{userInfo.province}}</text>
+        </view> 
+        <view>
+           <label>城市:</label><text>{{userInfo.city}}</text>
+        </view>
+     </view>
    </view>
 </view>

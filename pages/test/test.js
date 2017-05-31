@@ -43,9 +43,6 @@ Page({
     })
   },
   onShow(){
-    wx.setNavigationBarTitle({
-      title: 'Test页面'
-    })
     wx.showNavigationBarLoading()
     setTimeout(()=>{
       wx.hideNavigationBarLoading()

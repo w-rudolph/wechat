@@ -8,7 +8,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "微信小程序",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
@@ -31,6 +31,12 @@
         "text": "其他",
         "iconPath": "images/other.png",
         "selectedIconPath": "images/otherS.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "我",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/meS.png"
       }
     ]
   },
