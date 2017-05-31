@@ -1,0 +1,6 @@
+<view>
+   <text>about page</text>
+   <view>
+     <button type="primary" size="mini" bindtap="showTabbar">back to home</button>
+   </view>
+</view>

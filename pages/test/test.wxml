@@ -1,0 +1,13 @@
+<!--pages/test/test.js.wxml-->
+<view class="test">
+  <text>pages/test/test.js.wxml</text>
+  <view>
+    <button size="mini" type="primary" bindtap="showToast">show toast</button>
+  </view>
+  <view>
+    <button size="mini" type="primary" bindtap="showModal">show modal</button>
+  </view>
+  <view>
+    <button size="mini" type="primary" bindtap="showActionSheet">show Actionsheet</button>
+  </view>
+</view>
