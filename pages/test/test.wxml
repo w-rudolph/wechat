@@ -1,13 +1,34 @@
 <!--pages/test/test.js.wxml-->
 <view class="test">
-  <text>pages/test/test.js.wxml</text>
-  <view>
-    <button size="mini" type="primary" bindtap="showToast">show toast</button>
-  </view>
-  <view>
-    <button size="mini" type="primary" bindtap="showModal">show modal</button>
-  </view>
-  <view>
-    <button size="mini" type="primary" bindtap="showActionSheet">show Actionsheet</button>
-  </view>
+    <view>
+        <button size="mini" type="primary" bindtap="showToast">show toast</button>
+    </view>
+    <view>
+        <button size="mini" type="primary" bindtap="showModal">show modal</button>
+    </view>
+    <view>
+        <button size="mini" type="primary" bindtap="showActionSheet">show Actionsheet</button>
+    </view>
+    <view>
+        <button size="mini" type="primary" bindtap="chooseImage">chosse image</button>
+    </view>
+    <view wx:if="{{imgSrc}}">
+        <image src="{{imgSrc}}"></image>
+    </view>
+    <view>
+        <button size="mini" type="primary" bindtap="startRecord">start Record</button>
+    </view>
+    <view>
+        <button size="mini" type="primary" bindtap="stopRecord">stop Record</button>
+    </view>
+    <view>
+        <button size="mini" type="primary" bindtap="qrcode">QRCode</button>
+    </view>
+    <view class="map">
+        <map id="myMap" bindmakertap="makertap" bindtap="bindtap"  show-location />
+    </view>
+    <view>
+        <button size="mini" type="primary" bindtap="moveToLocation">moveToLocation</button>
+        <button size="mini" type="primary" bindtap="getCenterLocation">getCenterLocation</button>
+    </view>
 </view>
