@@ -15,9 +15,9 @@ Page({
         wx.showToast({
             title: '下拉加载中...',
         });
-        setTimeout(()=>{
+        setTimeout(() => {
             wx.stopPullDownRefresh()
-        },1500);
+        }, 1500);
     },
     onReachBottom: function () {
         wx.showToast({

@@ -1,34 +1,52 @@
 <!--pages/test/test.js.wxml-->
 <view class="test">
-    <view>
-        <button size="mini" type="primary" bindtap="showToast">show toast</button>
-    </view>
-    <view>
-        <button size="mini" type="primary" bindtap="showModal">show modal</button>
-    </view>
-    <view>
-        <button size="mini" type="primary" bindtap="showActionSheet">show Actionsheet</button>
-    </view>
-    <view>
-        <button size="mini" type="primary" bindtap="chooseImage">chosse image</button>
-    </view>
-    <view wx:if="{{imgSrc}}">
-        <image src="{{imgSrc}}"></image>
-    </view>
-    <view>
-        <button size="mini" type="primary" bindtap="startRecord">start Record</button>
-    </view>
-    <view>
-        <button size="mini" type="primary" bindtap="stopRecord">stop Record</button>
-    </view>
-    <view>
-        <button size="mini" type="primary" bindtap="qrcode">QRCode</button>
-    </view>
-    <view class="map">
-        <map id="myMap" bindmakertap="makertap" bindtap="bindtap"  show-location />
-    </view>
-    <view>
-        <button size="mini" type="primary" bindtap="moveToLocation">moveToLocation</button>
-        <button size="mini" type="primary" bindtap="getCenterLocation">getCenterLocation</button>
-    </view>
+  <view>
+    <button size="mini" type="primary" bindtap="showToast">show toast</button>
+  </view>
+  <view>
+    <button size="mini" type="primary" bindtap="showModal">show modal</button>
+  </view>
+  <view>
+    <button size="mini" type="primary" bindtap="showActionSheet">show Actionsheet</button>
+  </view>
+  <view>
+    <button size="mini" type="primary" bindtap="chooseImage">chosse image</button>
+  </view>
+  <view wx:if="{{imgSrc}}">
+    <image src="{{imgSrc}}"></image>
+  </view>
+  <view>
+    <button size="mini" type="primary" bindtap="startRecord">start Record</button>
+  </view>
+  <view>
+    <button size="mini" type="primary" bindtap="stopRecord">stop Record</button>
+  </view>
+  <view>
+    <button size="mini" type="primary" bindtap="qrcode">QRCode</button>
+  </view>
+  <view class="map">
+    <map id="myMap" bindmakertap="makertap" bindtap="bindtap" show-location />
+  </view>
+  <view>
+    <button size="mini" type="primary" bindtap="moveToLocation">moveToLocation</button>
+    <button size="mini" type="primary" bindtap="getCenterLocation">getCenterLocation</button>
+  </view>
+  <view>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox" wx:for="{{items}}">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </checkbox-group>
+  </view>
+  <view>
+    數字框
+    <input class="numberbox" type="number" />
+  </view>
+  <view class="classname">
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        当前选择: {{date}}
+      </view>
+    </picker>
+  </view>
 </view>

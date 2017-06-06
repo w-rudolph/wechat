@@ -2,59 +2,68 @@
 Page({
     data: {
         imgSrc: '',
-        latitude:'',
-        longitude:''
+        latitude: '',
+        longitude: '',
+        date: '2016-09-01',
+        items: [
+            { name: 'USA', value: '美国' },
+            { name: 'CHN', value: '中国', checked: 'true' },
+            { name: 'BRA', value: '巴西' },
+            { name: 'JPN', value: '日本' },
+            { name: 'ENG', value: '英国' },
+            { name: 'TUR', value: '法国' },
+        ]
     },
-    showToast(){
+    showToast() {
         wx.showToast({
-            title:'成功',
-            icon:'loading',
+            title: '成功',
+            icon: 'loading',
             duration: 1000,
-            fail(){
+            fail() {
                 console.log('fail')
             },
-            success(){
+            success() {
                 console.log('success');
             }
         })
     },
-    showModal(){
+    showModal() {
         wx.showModal({
-        title: 'title',
-        content: 'Hello world!',
-        success(res){
-            if(res.confirm){
-            console.log('confirm')
-            }else if(res.cancel){
-            console.log('cancel')
+            title: 'title',
+            content: 'Hello world!',
+            success(res) {
+                if (res.confirm) {
+                    console.log('confirm')
+                } else if (res.cancel) {
+                    console.log('cancel')
+                }
             }
-        }
         })
     },
-    showActionSheet(){
+    showActionSheet() {
         wx.showActionSheet({
-            itemList: ['A','B','C'],
+            itemList: ['A', 'B', 'C'],
             itemColor: '',
-            success: function(res) {
+            success: function (res) {
                 console.log(res.tapIndex)
             }
         })
     },
-    onShow(){
+    onShow() {
         wx.showNavigationBarLoading()
-        setTimeout(()=>{
+        setTimeout(() => {
             wx.hideNavigationBarLoading()
-        },1000)
+        }, 1000)
     },
-    showTabbar(){
+    showTabbar() {
         wx.switchTab({
             url: '../index/index',
         })
     },
-    chooseImage(){
+    chooseImage() {
         wx.chooseImage({
             count: 1,
-            sourceType:['camera', 'albumn'],
+            sourceType: ['camera', 'albumn'],
             success: (res) => {
                 let tempFilePaths = res.tempFilePaths;
                 this.setData({
@@ -63,9 +72,9 @@ Page({
             }
         })
     },
-    startRecord(){
+    startRecord() {
         wx.startRecord({
-            success(res){
+            success(res) {
                 var tempFilePath = res.tempFilePath
                 wx.playVoice({
                     filePath: tempFilePath
@@ -73,20 +82,27 @@ Page({
             }
         })
     },
-    stopRecord(){
+    stopRecord() {
         wx.stopRecord();
     },
-    qrcode(){
+    qrcode() {
         wx.scanCode({
-            success(res){
+            success(res) {
                 wx.showModal({
                     title: 'code',
-                    content: JSON.stringify(res, null ,2),
+                    content: JSON.stringify(res, null, 2),
                 })
             }
         })
     },
-    onReady(){
+    checkboxChange(e) {
+        console.log(e.detail.value);
+    },
+    bindDateChange(e) {
+        console.log(e.detail.value);
+        this.setData({ date: e.detail.value })
+    },
+    onReady() {
         this.mapCtx = wx.createMapContext('myMap');
         /*wx.getLocation({
             type: 'gcj02',
@@ -102,20 +118,20 @@ Page({
             }
         })*/
     },
-    moveToLocation(){
+    moveToLocation() {
         this.mapCtx.moveToLocation();
     },
-    bindtap(e){
+    bindtap(e) {
         console.log(e);
     },
     makertap: function (e) {
         var that = this;
         var id = e.markerId;
         that.showSearchInfo(wxMarkerData, id);
-    }, 
-    getCenterLocation(){
+    },
+    getCenterLocation() {
         this.mapCtx.getCenterLocation({
-            success(res){
+            success(res) {
                 wx.showModal({
                     title: 'location',
                     content: JSON.stringify(res, null, 2),

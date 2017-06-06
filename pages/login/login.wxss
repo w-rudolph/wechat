@@ -1,0 +1,32 @@
+/* login.wxss */
+
+.login_container {
+  padding: 10px;
+}
+
+.list-item {
+  border-top: 1px solid #eee;
+  padding: 10px 5px;
+}
+
+.phone_code {
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.phone_code input {
+  padding-right: 110px;
+}
+
+.phone_code button {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  line-height: 2.2;
+  width: 108px;
+}

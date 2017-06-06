@@ -1,17 +1,16 @@
 <!--index.wxml-->
 <view class="container">
-    <text>首页</text>
-    <text>{{motto}}</text>
-    <view class="swiper">
-        <swiper indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-            <block wx:for="{{imgUrls}}" wx:for-item="item" wx:for-index="idx" wx:key="idx">
-                <swiper-item>
-                    <view bindtap="imagePreview" data-idx="{{idx}}">
-                        <image src="{{item}}" class="slide-image" width="355" height="150"/>
-                    </view>
-                </swiper-item>
-            </block>
-        </swiper>
-    </view>
+  <text>首页</text>
+  <text>{{motto}}</text>
+  <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:for-item="item" wx:for-index="idx" wx:key="idx">
+        <swiper-item>
+          <view bindtap="imagePreview" data-idx="{{idx}}">
+            <image src="{{item}}" class="slide-image" width="355" height="150" />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
 </view>

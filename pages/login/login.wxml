@@ -1,0 +1,12 @@
+<!--login.wxml-->
+<view class="login_container">
+  <view class="top">
+    <view class="phone_number list-item">
+      <input type="number" placeholder="手机号" bindinput="handlePhoneNumberChange" value="{{phoneNumber}}" />
+    </view>
+    <view class="phone_code list-item">
+      <input type="number" placeholder="验证码" bindinput="handlePhoneCodeChange" value="{{phoneCode}}" />
+      <button type="primary" disabled="{{!canGetPhoneCode}}" bindtap="getPhoneCode">{{phoneCodeBtnText}}</button>
+    </view>
+  </view>
+</view>

@@ -1,15 +1,15 @@
 var app = getApp()
 Page({
-    data:{
-        userInfo:{}
+    data: {
+        userInfo: {}
     },
     showTabbar() {
         wx.switchTab({
-        url: '../index/index',
+            url: '../index/index',
         })
     },
-    onLoad(){
-        app.getUserInfo((userInfo)=>{
+    onLoad() {
+        app.getUserInfo((userInfo) => {
             this.setData({
                 userInfo
             })

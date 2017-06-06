@@ -1,5 +1,14 @@
 /* pages/test/test.js.wxss */
-map{
-    width: 100%;
-    height: 400rpx;
+
+map {
+  width: 100%;
+  height: 400rpx;
+}
+
+.test {
+  background: #eee;
+}
+
+.numberbox {
+  background: #fff;
 }
