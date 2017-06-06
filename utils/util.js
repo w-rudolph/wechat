@@ -25,7 +25,7 @@ function countDown(count = 30) {
         if (diff === 0) {
             clearTimeout(timer);
         } else {
-            setTimeout(() => fn(cb), 1000)
+            timer = setTimeout(() => fn(cb), 1000)
         }
     };
     return fn;
